@@ -1,1 +1,11 @@
 @import "tailwindcss";
+*{
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+#scrollbar-image{
+    background-repeat: no-repeat;
+    width:100%;
+    height:100vh;
+    background-size:contain;
+}
