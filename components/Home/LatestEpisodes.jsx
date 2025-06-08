@@ -1,5 +1,6 @@
 import Card from "../Cards/Card"
 import Slidebtn from "../Buttons/Slidebtn";
+import { BellDot } from "lucide-react";
 
 export default async function LatestEpisodes() {
 
@@ -10,19 +11,20 @@ export default async function LatestEpisodes() {
 
   return (
     <>
-              <div id="libraury-border">
-              <div id="libraury-title" >
-              <div id='lib-child' >
-                <h4>Latest Episodes</h4>
-                </div>
-                <div id='lib-child'>
-                  <Slidebtn view='latestEpisodes' />
-                  </div>
-                  </div>
-                <div id="container">
-                  {latestEpisodes.map((index)=>{return( <Card key={index.id} id={index.id} image={index.img} name={index.name} /> )})}
-                </div>
-                </div>
+           <div className="bg-black text-white p-2 xl:p-5 md:p-5">
+              <div className="flex justify-between p-2">
+              <div className="flex gap-3 justify-center items-center">
+                <BellDot/>
+                <p>Latest Episodes</p>
+              </div>
+              <div className="flex justify-center items-center text-xs">
+                <Slidebtn view='trendingAnimes'/>
+              </div>
+              </div>
+              <div className="overflow-auto inset-shadow-black overflow-y-hidden w-full h-[175px] xl:h-[250px] md:h-[250px] whitespace-nowrap">
+                {latestEpisodes.map((item,index)=>{return( <Card key={item.id} id={item.id} dub={item.episodes.dub} sub={item.episodes.sub} image={item.img} name={item.name} /> )})}
+              </div>
+            </div>
     </>
   )
 }

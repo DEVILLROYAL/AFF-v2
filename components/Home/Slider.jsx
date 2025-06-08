@@ -1,3 +1,5 @@
+import { Rss, Tally1 } from "lucide-react";
+
 export default async function Slider() {
   const url = 'https://myanime-dun.vercel.app/aniwatch/';
   const data = await fetch(url);
@@ -14,16 +16,20 @@ export default async function Slider() {
                 <p className="w-full text-wrap">{item.name}</p>
                 <p className="w-full text-wrap hidden text-xs md:block xl:block">{item.description}</p>
               </div>
-              <div className="p-1 md:p-2 md:m-2 xl:p-2 xl:rounded m-1 absolute xl:m-5 text-xs xl:text-sm text-white top-0 left-0 bg-gray-600" >
+              <div className='flex justify-center opacity-50 items-center text-white p-2 md:p-2 xl:p-5 text-xs xl:text-sm absolute top-0 left-0'>
+                <div className="font-extralight gap-2 flex justify-center items-center text-xs xl:text-sm text-white">
+                  <Rss/>
                 <p>Spotlight {item.rank}</p>
               </div>
-              <div className="flex flex-row-reverse  text-white p-1 md:p-2 md:gap-3 xl:gap-5 xl:p-5 gap-2 text-xs xl:text-sm absolute top-0 right-0">
-              <div className="w-max p-1 md:p-2 opacity-50 xl:rounded xl:p-2 bg-gray-600" >
+              </div>
+              <div className="flex justify-center opacity-50 items-center flex-row-reverse  text-white p-1 md:p-2 md:gap-3 xl:gap-5 xl:p-5 gap-2 text-xs xl:text-sm absolute top-0 right-0">
+              <div className="flex justify-center p-1 items-center font-extralight" >
                 <p>
                    {item.quality}
                 </p>
               </div>
-              <div className="w-max p-1 xl:rounded md:p-2 opacity-50 xl:p-2 bg-gray-600" >
+              |
+              <div className="font-extralight p-1 flex justify-center items-center" >
                 <p>
                    {item.category}
                 </p>
