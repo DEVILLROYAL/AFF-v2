@@ -10,7 +10,7 @@ export default function Slidebtn(props) {
 
   return (
     <> 
-        <button onClick={()=>handleView(props.view)} className="xl:hidden border opacity-50 p-2 rounded" style={{cursor:'pointer'}} > View all </button>
+        <button onClick={()=>handleView(props.view)} className="xl:hidden opacity-50 p-2" style={{cursor:'pointer'}} > View all </button>
     </>
   )
 }

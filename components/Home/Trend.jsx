@@ -21,7 +21,7 @@ export default async function Trend(props) {
           <Slidebtn view='trendingAnimes'/>
         </div>
         </div>
-        <div className="overflow-auto inset-shadow-black overflow-y-hidden w-full h-[175px] xl:h-[250px] md:h-[250px] whitespace-nowrap">
+        <div className="overflow-auto scroll-smooth inset-shadow-black overflow-y-hidden w-full h-[175px] xl:h-[250px] md:h-[250px] whitespace-nowrap">
           {trend.map((index)=>{return( <Card key={index.id} id={index.id} image={index.img} name={index.name} /> )})}
         </div>
         </div>

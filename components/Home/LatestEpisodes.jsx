@@ -21,7 +21,7 @@ export default async function LatestEpisodes() {
                 <Slidebtn view='trendingAnimes'/>
               </div>
               </div>
-              <div className="overflow-auto inset-shadow-black overflow-y-hidden w-full h-[175px] xl:h-[250px] md:h-[250px] whitespace-nowrap">
+              <div className="overflow-auto scroll-smooth inset-shadow-black overflow-y-hidden w-full h-[175px] xl:h-[250px] md:h-[250px] whitespace-nowrap">
                 {latestEpisodes.map((item,index)=>{return( <Card key={item.id} id={item.id} dub={item.episodes.dub} sub={item.episodes.sub} image={item.img} name={item.name} /> )})}
               </div>
             </div>
