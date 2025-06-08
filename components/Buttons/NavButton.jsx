@@ -11,7 +11,7 @@ export default function NavButton() {
   return (
     <>
        <div>
-            <button onClick={()=>handleHomeClick()} >
+            <button style={{cursor:'pointer'}} onClick={()=>handleHomeClick()} >
                 <p>AFF</p>
             </button>
        </div>
