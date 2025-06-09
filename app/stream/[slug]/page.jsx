@@ -8,7 +8,7 @@ export default async function StreamPage({ params }) {
   // const ul = `https://test-delta-eight-77.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${decodeURIComponent(slug)}&server=hd-2&category=sub`;
   // const data = await fetch(ul);
   // const res = await data.json();
-  // const stream = await res?.data?.sources[0].url;
+  // const stream = await res?.data?.sources[0]?.url;
 
   // const jikanUl = `https://api.jikan.moe/v4/anime/${res.data.malID}`;
   // const jikanData = await fetch(jikanUl);
@@ -19,7 +19,7 @@ export default async function StreamPage({ params }) {
     <>
         <div>
           <div>
-            <StreamPlayer/>
+            <StreamPlayer url={stream} />
           </div>
           <div id='anime-title'>
             <p>

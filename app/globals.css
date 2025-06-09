@@ -2,6 +2,7 @@
 *{
     box-sizing: border-box;
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 #scrollbar-image{
     background-repeat: no-repeat;
