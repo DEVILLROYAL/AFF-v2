@@ -4,6 +4,9 @@
     scrollbar-width: none;
     scroll-behavior: smooth;
 }
+body{
+    background:black;
+}
 #scrollbar-image{
     background-repeat: no-repeat;
     width:100%;
