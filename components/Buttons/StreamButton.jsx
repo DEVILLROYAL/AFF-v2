@@ -11,8 +11,8 @@ export default function StreamButton(props) {
     
   return (
     <>
-       <div id="watchButton-border">
-        <button type="button" id="watch-btn" onClick={()=>handleSelectClick(props.epId)} > Watch Now </button>
+       <div className="border cursor-pointer text-white w-max p-2 text-xs bg-red-600">
+        <button type="button" onClick={()=>handleSelectClick(props.epId)} > Watch Now </button>
        </div>
     </>
   )

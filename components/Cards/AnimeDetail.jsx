@@ -3,28 +3,27 @@ import StreamButton from "../Buttons/StreamButton";
 export default function AnimeDetail(props) {
   return (
     <>
-       <div id="animedetail-border">
-        <div id="detail-rating">
+       <div className="absolute bg-gradient-to-b from-transparent to-black bottom-0 h-max  p-2 w-full z-1 gap-2 flex flex-col justify-center items-center">
+        <div className="border w-max p-1 text-xs rounded">
           {props.rating && 
-        <p>{props.rating}</p>
+        <p className="text-shadow-md text-shadow-black">{props.rating}</p>
           }
         </div>
-        <div id="detail-title">
-        <h1>{props.name}</h1>
+        <div className="w-full text-center">
+        <p className="text-wrap text-xl text-shadow-lg text-shadow-black">{props.name}</p>
         </div>
-        <StreamButton epId={props.epId} />
-        <div id="detail-detail">
-        <div id="detail-type">
-        <h4>{props.type}</h4>
+        <div className="flex flex-row-reverse text-xs w-max gap-2">
+        <div className="items-center gap-2 h-max flex w-max">
+          <p className="border p-1">{props.type}</p>
         </div>
-        <div id="detail-episodes">
+        <div className="gap-2 h-max flex w-max">
           {props.episodes && 
-        <p>Episodes- {props.episodes}</p>
+          <p className="border p-1">Episodes {props.episodes}</p>
           }
         </div>
-        <div id="detail-duration">
+        <div className="gap-2 h-max flex w-max">
           {props.duration && 
-        <p>Duration- {props.duration}</p>
+          <p className="border p-1">Duration {props.duration}</p>
           }
         </div>
         </div>

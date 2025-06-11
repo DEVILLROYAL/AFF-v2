@@ -21,23 +21,22 @@ export default async function AnimePage({ params }) {
 
   return (
         <>
-               <div id="detail-border">
-                <div id="detail-player">
+               <div className="bg-black text-white">
+                <div className='relative w-full'>
                     {titles.map((item,index)=>{return(<AnimeDetail key={index} name={titles[0].title_english ?? titles[0].title} duration={item.duration} url={slug} epId={epData?.episodes[0]?.episodeId} episodes={item.episodes} type={item.type} rating={item.rating} />)})}
                     {tlr.embed_url === null ? <div id="trailerImg-border">
-                      <img src={tlrImage.large_image_url} id='trailerImage' />
+                      <img src={tlrImage.large_image_url} id='trailerImage'/>
                       <div  id='trailerImage-2'></div>
                     </div> : 
-                    <div id="youtube-player">
+                    <div className='overflow-hidden relative'>
                        <TrailerPlayer url={tlr.embed_url} />
-                       <div id="black-filter"></div>
                     </div>
                       }
                     </div>
-                <div id="detail-desc"> 
+                <div className='text-wrap text-center p-2'> 
                 <p>{titles[0]?.synopsis}</p>
                 </div>
-                  <div className="container">
+                  {/* <div className="container">
                             <div id="libraury-title" >
                               <div id='lib-child'>
                               <h4>Episodes</h4>
@@ -52,7 +51,7 @@ export default async function AnimePage({ params }) {
                           <Episodes epId={item.episodeId} name={item.title} url={tlrImage.large_image_url} order={item.number} /></div>)})}
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
         </>
   )
