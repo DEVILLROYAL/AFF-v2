@@ -1,5 +1,6 @@
 'use client'
 
+import { Play } from "lucide-react";
 import {useRouter} from "next/navigation"
 
 export default function StreamButton(props) {
@@ -11,7 +12,8 @@ export default function StreamButton(props) {
     
   return (
     <>
-       <div className="border cursor-pointer text-white w-max p-2 text-xs bg-red-600">
+       <div className="cursor-pointer shadow-md shadow-black flex justify-between items-center gap-2 text-white w-max rounded p-2 text-xs bg-red-600">
+        <Play size={15}/>
         <button type="button" onClick={()=>handleSelectClick(props.epId)} > Watch Now </button>
        </div>
     </>

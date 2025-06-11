@@ -1,7 +1,9 @@
 import TrailerPlayer from '@/components/Video/TrailerPlayer';
 import AnimeDetail from '../../../components/Cards/AnimeDetail';
-import Episodes from '@/components/Episodes';
+import Episodes from '@/components/Cards/Episodes';
 import Slidebtn from '@/components/Buttons/Slidebtn';
+import { Construction, ListVideo } from 'lucide-react';
+import Showcase from '@/components/Cards/Showcase';
 
 
 export default async function AnimePage({ params }) {
@@ -22,36 +24,41 @@ export default async function AnimePage({ params }) {
   return (
         <>
                <div className="bg-black text-white">
-                <div className='relative w-full'>
-                    {titles.map((item,index)=>{return(<AnimeDetail key={index} name={titles[0].title_english ?? titles[0].title} duration={item.duration} url={slug} epId={epData?.episodes[0]?.episodeId} episodes={item.episodes} type={item.type} rating={item.rating} />)})}
-                    {tlr.embed_url === null ? <div id="trailerImg-border">
-                      <img src={tlrImage.large_image_url} id='trailerImage'/>
-                      <div  id='trailerImage-2'></div>
-                    </div> : 
-                    <div className='overflow-hidden relative'>
-                       <TrailerPlayer url={tlr.embed_url} />
-                    </div>
-                      }
-                    </div>
-                <div className='text-wrap text-center p-2'> 
+                <Showcase
+                data={titles}
+                tlr={tlr}
+                slug={slug}
+                epData={epData?.episodes[0]?.episodeId}
+                alt={titles[0].title_english ?? titles[0].title}
+                image={tlrImage.large_image_url}/>
+                <div className='text-wrap w-auto max-h-36 overflow-auto text-center m-5'> 
                 <p>{titles[0]?.synopsis}</p>
                 </div>
-                  {/* <div className="container">
-                            <div id="libraury-title" >
-                              <div id='lib-child'>
-                              <h4>Episodes</h4>
+                  <div>
+                    {epData?.episodes.length > 0 &&
+                            <div className='flex justify-between p-2 items-center w-full'>
+                              <div className='flex justify-center items-center gap-2'>
+                                <ListVideo/>
+                                <h4>Episodes</h4>
                               </div>
-                              <div id="lib-child">
-                              <Slidebtn view='trendingAnimes' />
+                              <div>
+                                <Slidebtn view='trendingAnimes' />
                               </div>
-                              </div>
-                    <div className="contailer" id="search-result-control" >
-                      <div className="row" id="search-result" >
-                        {epData?.episodes.map((item, index)=>{return(<div className="col my-1 mx-1" id='search-col' key={index} >
-                          <Episodes epId={item.episodeId} name={item.title} url={tlrImage.large_image_url} order={item.number} /></div>)})}
+                            </div>}
+                    <div className='overflow-auto p-2 w-full max-h-[515px]'>
+                      <div className='grid gap-2 grid-cols-2'>
+                        {epData?.episodes.map((item, index)=>{return(
+                            <Episodes
+                            epId={item.episodeId}
+                            key={index}
+                            name={item.title}
+                            url={tlrImage.large_image_url}
+                            rank={item.number}
+                            />
+                            )})}
                       </div>
                     </div>
-                  </div> */}
+                  </div>
                 </div>
         </>
   )
