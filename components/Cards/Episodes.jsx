@@ -6,7 +6,7 @@ export default function Episodes(props) {
   const router = useRouter();
     
 const handleSelectClick = async (slug) => {
-    router.push(`/stream/${encodeURIComponent(slug)}`);
+    router.push(`/comming/${encodeURIComponent(slug)}`);
 };
 
   return (

@@ -12,7 +12,7 @@ export default function NavButton() {
     <>
        <div>
             <button style={{cursor:'pointer'}} onClick={()=>handleHomeClick()} >
-                <p>AFF</p>
+                <p className="text-lg">AFF</p>
             </button>
        </div>
     </>

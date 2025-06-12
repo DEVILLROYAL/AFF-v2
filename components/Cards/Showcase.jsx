@@ -29,20 +29,23 @@ const handleMute = () => {
             }
             {props.tlr.embed_url === null ?
             <>
-            <div className="relative">
-                <img className='w-full' src={props.image} alt={props.alt}/>
-                <span className="absolute w-full bg-radial mask-radial-at-center to-black top-0 h-full"/>
+            <div className="relative flex justify-end">
+                <img className='w-full xl:h-screen md:h-screen xl:rounded-tl-4xl md:rounded-tl-4xl xl:w-auto' src={props.image} alt={props.alt}/>
+                {props.tlr.embed_url !== null &&
+                <span className="absolute w-full bg-radial mask-radial-at-center to-black top-0 h-full"/>}
             </div>
             </>
             :
             <div className='overflow-hidden'>
-                <div className='h-[600px] pointer-events-none m-[-120]'>
+                <div className='h-[600px] relative xl:h-[850] pointer-events-none m-[-120]'>
+                    <span className="absolute w-full bg-radial mask-radial-at-center to-65% to-black top-0 h-full"></span>
                     <ReactPlayer
                     url={props.tlr.embed_url}
                     playing
                     muted={isMute}
                     loop
                     height='100%'
+                    width='100%'
                     config={{youtube: {
                         playerVars: {
                             autoplay: 1,
@@ -63,9 +66,11 @@ const handleMute = () => {
                 </div>
             </div>
             }
-            <button className='border z-5 p-2 m-2 absolute top-0 right-0 w-max flex justify-center items-center rounded cursor-pointer' onClick={handleMute}>
+            {props.tlr.embed_url !== null &&
+                        <button className='border opacity-50 z-5 p-2 m-2 absolute top-0 right-0 w-max flex justify-center items-center rounded-full cursor-pointer' onClick={handleMute}>
                     {isMute ? <Volume2 size={15}/> : <VolumeX size={15}/> }
             </button>
+            }
     </div>
     </>
   )
