@@ -1,4 +1,3 @@
-import AnimePlayer from '@/components/AnimePlayer';
 import React from 'react'
 
 export default async function EpisodePage({params}) {
@@ -14,7 +13,6 @@ export default async function EpisodePage({params}) {
   return (
     <>
        <div id="anime-border">
-        <AnimePlayer />
        </div>
     </>
   )
