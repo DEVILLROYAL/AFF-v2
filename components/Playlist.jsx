@@ -1,6 +1,5 @@
 'use client'
 
-import YoutubePlayer from "./video/YoutubePlayer";
 import { useState } from "react";
 
 export default function Playlist(props) {
