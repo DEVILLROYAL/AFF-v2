@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/Home/Navbar";
 import Footer from "@/components/Home/Footer";
 
@@ -16,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Anime for free",
   description: "Welcome to AnimeForFree, the ultimate free anime streaming platform built for true anime lovers! From timeless classics to the newest episodes fresh from Japan, AnimeForFree lets you explore a massive library of HD anime—no subscriptions, no hidden fees.",
+  icons: {
+    icon:"/favicon.jpeg",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -26,6 +30,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar/>
         {children}
+        <Analytics />
         <Footer/>
       </body>
     </html>

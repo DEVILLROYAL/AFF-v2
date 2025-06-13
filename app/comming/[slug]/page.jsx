@@ -5,7 +5,7 @@ export default async function page({params}) {
     
   return (
     <>
-    <div className="text-white h-[100vh]">
+    <div className="text-white h-[100vw] md:h-[100vh]">
       <div className="p-2 md:p-5 h-full xl:p-5 flex flex-col justify-center items-center gap-2 md:gap-5 xl:gap-5 text-xs md:text-lg xl:text-xl">
         <div className="flex justify-center gap-2 md:gap-5 xl:gap-5 items-center">
           <Rocket/>

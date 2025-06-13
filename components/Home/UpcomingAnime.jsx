@@ -18,10 +18,10 @@ export default async function UpcomingAnime(props) {
                 <p>Upcoming Animes</p>
               </div>
               <div className="flex justify-center items-center text-xs">
-                <Slidebtn view='trendingAnimes'/>
+                <Slidebtn view='topUpcomingAnimes'/>
               </div>
               </div>
-              <div className="overflow-auto scroll-smooth inset-shadow-black overflow-y-hidden w-full h-[175px] xl:h-[250px] md:h-[250px] whitespace-nowrap">
+              <div className="overflow-auto scroll-smooth inset-shadow-black overflow-y-hidden w-full h-[250px] md:h-[250px] whitespace-nowrap">
                 {upanime.map((item,index)=>{return( <Card key={item.id} id={item.id} image={item.img} name={item.name} /> )})}
               </div>
             </div>

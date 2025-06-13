@@ -45,8 +45,8 @@ export default async function AnimePage({ params }) {
                                 <Slidebtn view='trendingAnimes' />
                               </div>
                             </div>}
-                    <div className='overflow-auto p-2 xl:p-5 w-full max-h-[515px]'>
-                      <div className='grid gap-2 md:grid-cols-4 xl:gap-5 xl:grid-cols-8 grid-cols-2'>
+                    <div className='overflow-auto bg-gray-900 rounded-2xl p-2 xl:p-5 w-full max-h-screen'>
+                      <div className='grid grid-cols-2 gap-5 md:grid-cols-4 xl:grid-cols-7 m-5'>
                         {epData?.episodes.map((item, index)=>{return(
                             <Episodes
                             epId={item.episodeId}

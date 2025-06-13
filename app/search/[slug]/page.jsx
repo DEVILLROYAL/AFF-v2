@@ -23,8 +23,8 @@ return(
             }
           </div>
          </div>
-         <div  className="p-2 md:p-2 xl:p-5">
-            <div className="grid w-full grid-cols-2 md:grid-cols-4 xl:grid-cols-7 gap-2">
+         <div  className="h-auto min-h-screen">
+            <div className="grid grid-cols-2 gap-5 md:grid-cols-4 xl:grid-cols-7 m-5">
               {searchData.map((item, index)=>{ return (<div key={item.id} className="grid grid-rows-1">
                 <SearchComponent
                 name={item.name}

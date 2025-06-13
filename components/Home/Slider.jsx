@@ -1,4 +1,4 @@
-import { Rss, Tally1 } from "lucide-react";
+import { Rss } from "lucide-react";
 
 export default async function Slider() {
   const url = 'https://myanime-dun.vercel.app/aniwatch/';
