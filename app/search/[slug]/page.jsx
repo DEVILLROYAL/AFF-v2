@@ -1,5 +1,5 @@
 import { Construction, Search } from "lucide-react";
-import SearchComponent from "../../../components/SearchComponent";
+import SearchCard from "@/components/Cards/SearchCard";
 
 export default async function SearchPage({ params }) {
   const { slug } = await params;
@@ -8,6 +8,8 @@ export default async function SearchPage({ params }) {
     const data = await fetch(ul);
     let res = await data.json();
     const searchData = await res.animes;
+
+    console.log(res);
 
 return(
       <>
@@ -25,17 +27,7 @@ return(
          </div>
          <div  className="h-auto min-h-screen">
             <div className="grid grid-cols-2 gap-5 md:grid-cols-4 xl:grid-cols-7 m-5">
-              {searchData.map((item, index)=>{ return (<div key={item.id} className="grid grid-rows-1">
-                <SearchComponent
-                name={item.name}
-                id={item.id}
-                image={item.img}
-                duration={item.duration}
-                pg={item.rated}
-                dub={item.episodes.dub}
-                sub={item.episodes.sub}
-                /></div>)})}
-              </div>
+              <SearchCard res={searchData}/></div>
            </div>
       </>
   )  

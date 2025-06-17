@@ -4,7 +4,7 @@ import { Info, User } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className='w-full bg-gray-900 text-white rounded-t-3xl p-6 md:px-10 md:py-6 text-xs md:text-sm'>
+    <footer className='w-full bg-gray-900 text-white rounded-t-3xl mt-5 p-6 md:px-10 md:py-6 text-xs md:text-sm'>
       <div className='max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6'>
         
         <div>

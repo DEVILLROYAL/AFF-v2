@@ -18,7 +18,7 @@ export const metadata = {
   title: "Anime for free",
   description: "Welcome to AnimeForFree, the ultimate free anime streaming platform built for true anime lovers! From timeless classics to the newest episodes fresh from Japan, AnimeForFree lets you explore a massive library of HD anime—no subscriptions, no hidden fees.",
   icons: {
-    icon:"/favicon.jpeg",
+    icon:"/public/vercel.svg",
   },
 };
 
