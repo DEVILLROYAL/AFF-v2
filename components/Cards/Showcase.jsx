@@ -1,6 +1,5 @@
 'use client'
 
-import TrailerPlayer from "../Video/TrailerPlayer";
 import AnimeDetail from "./AnimeDetail";
 import dynamic from 'next/dynamic'
 import { useState } from 'react';

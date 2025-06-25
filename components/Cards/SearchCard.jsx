@@ -1,10 +1,14 @@
 'use client'
 
 import { useRouter } from "next/navigation"
-import { Mic, Subtitles } from "lucide-react";
+import { Mic, Subtitles, CircleArrowLeft, CircleArrowRight, } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { increment, decrement } from "@/store/counterSlice";
+
 export default function SearchComponent(props) {
   const[ data, setData ] = useState();
+  const dispatch = useDispatch();
   
   const router = useRouter();
   const handleSelectClick = async (slug) => {
@@ -15,10 +19,11 @@ export default function SearchComponent(props) {
     setData(props.res);
   },[ props.res ]);
 
-
   return (
     <>
-                          {data?.map((item, index)=>{ return (<div key={item.id} className="grid grid-rows-1">
+    <div className="flex flex-col gap-5">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-5 xl:grid-cols-8">
+                          {data?.map((item, index)=>{ return (<div key={item.id} className="">
                                 <div className="border rounded-[10px] overflow-hidden xl:rounded-[10px] w-full relative"  style={{cursor:"pointer"}} onClick={()=>handleSelectClick(item.id)}>
                                   <div className="h-[65vw] md:h-[30vw] xl:h-[18vw] bg-cover bg-no-repeat" style={{backgroundImage:`url(${item.img})`}}>
                                     <div className="border text-white rounded-[10px] xl:rounded-[10px] text-center text-sm h-full w-full bg-radial mask-radial-at-center to-black">
@@ -36,6 +41,8 @@ export default function SearchComponent(props) {
                                   </div>
                                 </div>
                             </div>)})}
+                            </div>
+    </div>
     </>
   )
 }
