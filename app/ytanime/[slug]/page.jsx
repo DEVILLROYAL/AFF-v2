@@ -41,7 +41,7 @@ export default async function AnimePage({ params }) {
                       <div className='grid grid-cols-2 gap-5 md:grid-cols-4 xl:grid-cols-7 m-5'>
                         {res?.map((item, index)=>{return(
                             <YtEpisodes
-                            epId={item.videoId}
+                            epId={slug}
                             key={index}
                             name={item.title}
                             url={cmData[0]?.image}

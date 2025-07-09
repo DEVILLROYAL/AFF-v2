@@ -6,7 +6,7 @@ export default function YtEpisodes(props) {
   const router = useRouter();
     
 const handleSelectClick = async (slug) => {
-    router.push(`/youwatch/${encodeURIComponent(slug)}`);
+    router.push(`/youwatch/${slug}`);
 };
 
   return (

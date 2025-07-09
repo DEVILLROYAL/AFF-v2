@@ -22,7 +22,7 @@ export default function YoutubePlayer(props) {
               showsearch:0,
               rel:0,
               cc_load_policy:0,
-              fs:0,
+              fs:1,
               },
               },
              }}
