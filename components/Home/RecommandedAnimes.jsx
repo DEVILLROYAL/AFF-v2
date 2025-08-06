@@ -15,3 +15,9 @@ export default function RecommandedAnimes(props) {
     </>
   )
 }
+
+
+
+
+
+

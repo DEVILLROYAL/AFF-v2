@@ -4,10 +4,10 @@ import { BellDot } from "lucide-react";
 
 export default async function LatestEpisodes() {
 
-    const ul = 'https://myanime-dun.vercel.app/aniwatch/';
+    const ul = 'https://test2-gold-phi.vercel.app/api/v2/hianime/home';
     const data = await fetch(ul);
     let res = await data.json();
-    const latestEpisodes = await res.latestEpisodes;
+    const latestEpisodes = await res.data.latestEpisodeAnimes;
 
   return (
     <>
@@ -22,7 +22,7 @@ export default async function LatestEpisodes() {
               </div>
               </div>
               <div className="overflow-auto scroll-smooth inset-shadow-black overflow-y-hidden w-full h-[250px] md:h-[250px] whitespace-nowrap">
-                {latestEpisodes.map((item,index)=>{return( <Card key={item.id} id={item.id} dub={item.episodes.dub} sub={item.episodes.sub} image={item.img} name={item.name} /> )})}
+                {latestEpisodes?.map((item,index)=>{return( <Card key={item.id} id={item.id} dub={item.episodes.dub} sub={item.episodes.sub} image={item.poster} name={item.name} /> )})}
               </div>
             </div>
     </>

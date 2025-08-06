@@ -4,10 +4,10 @@ import { Hourglass } from "lucide-react";
 
 export default async function UpcomingAnime(props) {
 
-  const ul = 'https://myanime-dun.vercel.app/aniwatch/';
+  const ul = 'https://test2-gold-phi.vercel.app/api/v2/hianime/home';
   const data = await fetch(ul);
   let res = await data.json();
-  let upanime = res.topUpcomingAnimes;
+  let upanime = await res.data.topUpcomingAnimes;
 
   return (
     <>
@@ -22,7 +22,7 @@ export default async function UpcomingAnime(props) {
               </div>
               </div>
               <div className="overflow-auto scroll-smooth inset-shadow-black overflow-y-hidden w-full h-[250px] md:h-[250px] whitespace-nowrap">
-                {upanime.map((item,index)=>{return( <Card key={item.id} id={item.id} image={item.img} name={item.name} /> )})}
+                {upanime?.map((item,index)=>{return( <Card key={item.id} id={item.id} image={item.poster} name={item.name} /> )})}
               </div>
             </div>
     </>

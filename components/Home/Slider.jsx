@@ -1,16 +1,18 @@
 import { Rss } from "lucide-react";
 
 export default async function Slider() {
-  const url = 'https://myanime-dun.vercel.app/aniwatch/';
+  const url = 'https://test2-gold-phi.vercel.app/api/v2/hianime/home';
   const data = await fetch(url);
   let res = await data.json();
-  const slider = await res.spotLightAnimes;
+  const slider = await res.data.spotlightAnimes;
+
+  console.log(res);
 
   return (
     <>
          <div className="overflow-auto overflow-y-hidden h-[50vw] w-full whitespace-nowrap">
-          { slider.map((item, index)=>{return(<div className="inline-block relative h-full w-full" key={item.id} >
-             <div className="w-full h-full bg-cover bg-no-repeat" style={{backgroundImage:`url(${item.img})`}}>
+          { slider?.map((item, index)=>{return(<div className="inline-block relative h-full w-full" key={item.id} >
+             <div className="w-full h-full bg-cover bg-no-repeat" style={{backgroundImage:`url(${item.poster})`}}>
               <div className="w-full bg-radial mask-radial-at-center to-black h-full">
               <div className="text-white bg-linear-to-b text-sm to-black to-60% flex w-full flex-col gap-3 absolute bottom-0 p-5 xl:text-xl" >
                 <p className="w-full text-wrap">{item.name}</p>

@@ -4,11 +4,11 @@ import { TrendingUp } from "lucide-react";
 
 export default async function Trend(props) {
 
-  const ul = 'https://myanime-dun.vercel.app/aniwatch/';
+  const ul = 'https://test2-gold-phi.vercel.app/api/v2/hianime/home';
   const data = await fetch(ul);
   let res = await data.json();
-  let trend = res.trendingAnimes;
-
+  let trend = await res.data.trendingAnimes;
+  
   return (
     <>
       <div className="bg-black text-white p-2 xl:p-5 md:p-5">
@@ -22,7 +22,7 @@ export default async function Trend(props) {
         </div>
         </div>
         <div className="overflow-auto scroll-smooth inset-shadow-black overflow-y-hidden w-full h-[250px] md:h-[250px] whitespace-nowrap">
-          {trend.map((index)=>{return( <Card key={index.id} id={index.id} image={index.img} name={index.name} /> )})}
+          {trend?.map((index)=>{return( <Card key={index.id} id={index.id} image={index.poster} name={index.name} /> )})}
         </div>
         </div>
     </>

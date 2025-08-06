@@ -16,7 +16,6 @@ export default function Home() {
           <Slider/>
           <Trend/>
           <LatestEpisodes/>
-          <HindiAnimes/>
           <LatestCompleted/>
           <UpcomingAnime/>
           <TopAnimes/>
