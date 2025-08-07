@@ -20,13 +20,13 @@ export default function SearchComponent(props) {
       setData(props.res.featuredAnimes.latestCompletedAnimes)
     }
         if ( slug === "latestEpisodes" ) {
-      setData(props.res.latestEpisodes)
+      setData(props.res.latestEpisodeAnimes)
     }
         if ( slug === "topUpcomingAnimes" ) {
       setData(props.res.topUpcomingAnimes)
     }
         if ( slug === "top10Animes.day" ) {
-      setData(props.res.top10Animes.day)
+      setData(props.res.top10Animes.today)
     }
             if ( slug === "top10Animes.week" ) {
       setData(props.res.top10Animes.week)
@@ -45,7 +45,7 @@ export default function SearchComponent(props) {
                         <div className="grid grid-cols-2 gap-5 md:grid-cols-4 xl:grid-cols-7 m-5">
                           {data?.map((item, index)=>{ return (<div key={item.id} className="grid grid-rows-1">
                                 <div className="border rounded-[10px] overflow-hidden xl:rounded-[10px] w-full relative"  style={{cursor:"pointer"}} onClick={()=>handleSelectClick(item.id)}>
-                                  <div className="h-[65vw] md:h-[30vw] xl:h-[18vw] bg-cover bg-no-repeat" style={{backgroundImage:`url(${item.img})`}}>
+                                  <div className="h-[65vw] md:h-[30vw] xl:h-[18vw] bg-cover bg-no-repeat" style={{backgroundImage:`url(${item.poster})`}}>
                                     <div className="border text-white rounded-[10px] xl:rounded-[10px] text-center text-sm h-full w-full bg-radial mask-radial-at-center to-black">
                                       <div className="w-full absolute bottom-0 p-2 xl:p-3">
                                         <p className="text-wrap text-shadow-black text-shadow-lg">{item.name}</p>

@@ -6,8 +6,6 @@ export default async function Slider() {
   let res = await data.json();
   const slider = await res.data.spotlightAnimes;
 
-  console.log(res);
-
   return (
     <>
          <div className="overflow-auto overflow-y-hidden h-[50vw] w-full whitespace-nowrap">

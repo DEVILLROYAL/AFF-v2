@@ -5,7 +5,7 @@ import React from 'react';
 export default async function StreamPage({ params }) {
   const { slug } = await params;
 
-  const ul = `https://test2-henna-tau.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${decodeURIComponent(slug)}&server=hd-2&category=sub`;
+  const ul = `https://test2-gold-phi.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${decodeURIComponent(slug)}&server=hd-1&category=dub`;
   const data = await fetch(ul);
   const res = await data.json();
   const stream = await res?.data?.sources[0]?.url;
