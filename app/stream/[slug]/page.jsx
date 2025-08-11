@@ -9,8 +9,6 @@ export default async function StreamPage({ params }) {
   const res = await data.json();
   const stream = await res?.data?.sources[0]?.url;
 
-  console.log(stream);
-
   const jikanUl = `https://api.jikan.moe/v4/anime/${res.data.malID}/episodes`;
   const jikanData = await fetch(jikanUl);
   const jikanRes = await jikanData.json();

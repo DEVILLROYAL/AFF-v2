@@ -19,8 +19,6 @@ export default async function AnimePage({ params }) {
       let res = await data.json();
       const epData = await res.data?.episodes;
 
-      console.log(res.data.episodes[0].title);
-
   return (
         <>
                <div className="bg-black text-white">
