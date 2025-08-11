@@ -1,8 +1,6 @@
-import TrailerPlayer from '@/components/Video/TrailerPlayer';
-import AnimeDetail from '../../../components/Cards/AnimeDetail';
 import Episodes from '@/components/Cards/Episodes';
 import Slidebtn from '@/components/Buttons/Slidebtn';
-import { Construction, ListVideo } from 'lucide-react';
+import { ListVideo } from 'lucide-react';
 import Showcase from '@/components/Cards/Showcase';
 
 
@@ -21,16 +19,18 @@ export default async function AnimePage({ params }) {
       let res = await data.json();
       const epData = await res.data?.episodes;
 
+      console.log(res.data.episodes[0].title);
+
   return (
         <>
                <div className="bg-black text-white">
-                <Showcase
+                {epData?.length > 0 && <Showcase
                 data={titles}
                 tlr={tlr}
                 slug={slug}
                 epData={epData[0]?.episodeId}
                 alt={titles[0]?.title_english ?? titles[0]?.title}
-                image={tlrImage?.large_image_url}/>
+                image={tlrImage?.large_image_url}/>}
                 <div className='text-wrap w-auto max-h-36 overflow-auto text-center m-5'> 
                 <p>{titles[0]?.synopsis}</p>
                 </div>

@@ -1,4 +1,3 @@
-import Server from '@/components/Cards/Server';
 import StreamPlayer from '@/components/Video/StreamPlayer';
 import React from 'react';
 
@@ -12,20 +11,19 @@ export default async function StreamPage({ params }) {
 
   console.log(stream);
 
-  const jikanUl = `https://api.jikan.moe/v4/anime/${res.data.malID}`;
+  const jikanUl = `https://api.jikan.moe/v4/anime/${res.data.malID}/episodes`;
   const jikanData = await fetch(jikanUl);
   const jikanRes = await jikanData.json();
-  console.log(jikanRes.data.title_english);
+  console.log(jikanRes);
 
   return (
     <>
-        <div>
-          <div>
+        <div className='text-white'>
+          <div className='m-10 rounded '>
             <StreamPlayer url={stream} />
           </div>
-          <div id='anime-title'>
+          <div className='border m-10 h-16'>
             <p>
-              Anime title
             </p>
           </div>
         </div>
