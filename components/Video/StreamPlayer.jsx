@@ -14,7 +14,7 @@ export default function StreamPlayer(props) {
       {isLoading && console.log('stream loading...')}
       {hasError && console.log('Loading failed...')}
       <ReactPlayer
-        url={`https://gogoanime-and-hianime-proxy-ten-murex.vercel.app/m3u8-proxy?url=${props.url}`}
+        url={`${props.url}`}
         controls
         onReady={() => setIsLoading(false)} 
         onError={(e) => {

@@ -9,7 +9,7 @@ export default function AnimeDetail(props) {
         </div>
         <div className="flex flex-col justify-center items-center xl:items-start gap-2">
           <div className="xl:block hidden md:block">
-            <StreamButton/>
+            <StreamButton epId={props.epId}/>
             </div>
                     <div className="border h-max w-max text-xs rounded xl:rounded-none">
               {props.rating && 

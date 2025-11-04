@@ -6,7 +6,7 @@ export default function WatchButton(props) {
     const router = useRouter();
 
     const handleSelectClick = async (slug) => {
-        router.push(`/comming/${slug}`);
+        router.push(`/stream/${encodeURIComponent(slug)}`);;
     };
   return (
     <>

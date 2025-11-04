@@ -14,6 +14,7 @@ export default async function AnimePage({ params }) {
     const titles = await cmData.data;
     const tlrImage = await cmData.data[0]?.images.webp;
     
+    
       const ul = `https://test2-gold-phi.vercel.app/api/v2/hianime/anime/${slug}/episodes`;
       const data = await fetch(ul);
       let res = await data.json();
@@ -26,7 +27,7 @@ export default async function AnimePage({ params }) {
                 data={titles}
                 tlr={tlr}
                 slug={slug}
-                epData={epData[0]?.episodeId}
+                epData={epData[0]?.episodeId.replace(/\?ep=/g, "$episode$")}
                 alt={titles[0]?.title_english ?? titles[0]?.title}
                 image={tlrImage?.large_image_url}/>}
                 <div className='text-wrap w-auto max-h-36 overflow-auto text-center m-5'> 
@@ -47,7 +48,7 @@ export default async function AnimePage({ params }) {
                       <div className='grid grid-cols-2 gap-5 md:grid-cols-4 xl:grid-cols-7 m-5'>
                         {epData?.map((item, index)=>{return(
                             <Episodes
-                            epId={item.episodeId}
+                            epId={item.episodeId.replace(/\?ep=/g, "$episode$")}
                             key={index}
                             name={item.title}
                             url={tlrImage.large_image_url}

@@ -8,13 +8,14 @@ export default function SearchScript() {
   const router = useRouter();
   const [quary, setQuary] = useState("");
 
+
   const handleSearchClick = async (slug) => {
     router.push(`/search/${slug}`);
   }; 
 
   return (
     <>
-        <Search onClick={() => handleSearchClick(quary)} onChange={e => setQuary(e.target.value)} value={quary} />
+       <Search onClick={() => handleSearchClick(quary)} onChange={e => setQuary(e.target.value)} value={quary} />
     </>   
   )
 }

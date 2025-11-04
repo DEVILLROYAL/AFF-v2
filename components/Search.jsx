@@ -2,6 +2,9 @@ import { SearchIcon } from "lucide-react"
 
 export default function Search(props) {
 
+  const val = props.value;
+  console.log(val);
+
   return (
     <>
          <div className='flex p-2 rounded'>
