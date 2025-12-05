@@ -16,17 +16,86 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Anime for free",
-  description: "Welcome to AnimeForFree, the ultimate free anime streaming platform built for true anime lovers! From timeless classics to the newest episodes fresh from Japan, AnimeForFree lets you explore a massive library of HD anime—no subscriptions, no hidden fees.",
-  icons: {
-    icon:"./favicon.ico",
+  metadataBase: new URL("https://animeforfree.online"),
+
+  title: {
+    default: "AnimeForFree — Watch Anime Online Free (No Ads)",
+    template: "%s | AnimeForFree"
   },
+
+  description:
+    "Watch anime online free in HD without ads. Stream your favorite sub and dub episodes instantly. Updated daily with trending anime, episodes, and movies.",
+
+  keywords: [
+    "watch anime",
+    "anime online",
+    "anime free",
+    "anime streaming",
+    "anime sub",
+    "anime dub",
+    "no ads anime",
+    "hd anime",
+    "anime website",
+    "animeforfree",
+    "anime for free",
+    "best anime streaming sites"
+  ],
+
+  openGraph: {
+    title: "AnimeForFree — Watch Anime Free in HD",
+    description:
+      "Ad-free anime streaming. Watch sub and dub episodes instantly in HD. No signup required.",
+    url: "https://animeforfree.online",
+    siteName: "AnimeForFree",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "AnimeForFree — Free Anime Streaming"
+      }
+    ],
+    locale: "en_US",
+    type: "website"
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "AnimeForFree — Watch Anime Online Free",
+    description:
+      "HD anime streaming without ads. Watch sub/dub episodes instantly.",
+    images: ["/og-image.jpg"]
+  },
+
+  alternates: {
+    canonical: "https://animeforfree.online",
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  }
 };
+
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+                  <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "AnimeForFree",
+            "url": "https://animeforfree.online",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://animeforfree.online/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          }
+          `}
+          </script>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
       </head>
