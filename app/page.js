@@ -7,6 +7,7 @@ import Trend from "@/components/Home/Trend";
 import UpcomingAnime from "@/components/Home/UpcomingAnime";
 import Loading from "./loading";
 import HindiAnime from "@/components/Home/HindiAnime";
+import Genera from "@/components/Home/Genera";
 
 /* -------------------------------------------------------
    🟢 HOMEPAGE SEO (JavaScript Only)
@@ -75,6 +76,7 @@ export default function Home() {
         <LatestCompleted />
         <UpcomingAnime />
         <TopAnimes />
+        <Genera/>
       </Suspense>
 
       {/* ----------- JSON-LD STRUCTURED DATA ----------- */}
