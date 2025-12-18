@@ -3,8 +3,6 @@
 ## Project Overview
 **AnimeForFree** is a responsive, ad-free anime streaming platform built with **Next.js (App Router)**, **JavaScript**, and **Tailwind CSS**. It fetches anime metadata from the **Jikan API** (MyAnimeList) and **Aniwatch API**, and streams videos using the **YouTube API** and third-party APIs (e.g., HiAnime). The application emphasizes a clean, user-friendly interface, performance optimization, and DMCA compliance by sourcing content legally from YouTube and other providers.
 
-> **⚠️ Note**: The project is under active development, and the streaming service is temporarily unavailable due to API maintenance.
-
 ---
 
 ## Table of Contents
