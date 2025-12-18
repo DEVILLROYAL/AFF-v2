@@ -1,6 +1,6 @@
 'use client'
 
-import AnimeDetail from "./AnimeDetail";
+import YtAnimeDetail from "@/components/Cards/YtAnimeDetail";
 import dynamic from 'next/dynamic'
 import { useState } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
@@ -17,7 +17,7 @@ const handleMute = () => {
     <>
     <div className='relative w-full'>
         {props.data.map((item,index)=>{return(
-            <AnimeDetail
+            <YtAnimeDetail
             key={index}
             name={props.alt}
             duration={item.duration}

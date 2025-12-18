@@ -4,7 +4,7 @@ import Playlist from '@/components/Playlist';
    SEO for YouTube Playlist Page (JS ONLY)
 -------------------------------------------- */
 export async function generateMetadata({ params }) {
-  const slug = params.slug;
+  const {slug} = await params;
 
   const api = `https://youtubeapi-tmc9.onrender.com/api/playlist?playlistId=${slug}`;
   const res = await fetch(api);
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }) {
       title,
       description,
       images: [{ url: thumbnail }],
-      type: "video.playlist",
+      type: "video.episode",
       siteName: "AnimeForFree"
     },
 
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }) {
    PAGE COMPONENT
 -------------------------------------------- */
 export default async function WatchPage({ params }) {
-  const slug = params.slug;
+  const {slug} = await params;
 
   const ul = `https://youtubeapi-tmc9.onrender.com/api/playlist?playlistId=${slug}`;
   const data = await fetch(ul);

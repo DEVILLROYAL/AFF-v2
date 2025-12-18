@@ -7,7 +7,7 @@ import YtEpisodes from "@/components/Cards/YtEpisodes";
    🟢 Dynamic SEO Metadata (JavaScript ONLY)
 ------------------------------------------------------- */
 export async function generateMetadata({ params }) {
-  const slug = params.slug;
+  const {slug} = await params;
 
   const api = `https://youtubeapi-tmc9.onrender.com/api/anime?playlistId=${slug}&limit=1`;
   const res = await fetch(api);
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }) {
       title,
       description,
       images: [{ url: image }],
-      type: "video.tv_show",
+      type: "video.episode",
       siteName: "AnimeForFree"
     },
 
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }) {
    🟢 Main YouTube Anime Page Component
 ------------------------------------------------------- */
 export default async function AnimePage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const animeInfoUrl = `https://youtubeapi-tmc9.onrender.com/api/anime?playlistId=${slug}&limit=1`;
   const playlistUrl = `https://youtubeapi-tmc9.onrender.com/api/playlist?playlistId=${slug}`;
@@ -76,6 +76,7 @@ export default async function AnimePage({ params }) {
           slug={mainAnime?.playlistId}
           alt={mainAnime?.engTitle ?? mainAnime?.animeTitle}
           image={mainAnime?.image}
+          epData={slug}
         />
 
         <div className="text-wrap w-auto max-h-36 overflow-auto text-center m-5">
