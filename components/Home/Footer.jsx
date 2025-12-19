@@ -6,32 +6,14 @@ export default function Footer() {
 
   const Mail = "deepakyadav4014@gmail.com";
   return (
-    <footer className='w-full bg-gray-900 text-white rounded-t-2xl mt-0 p-6 md:px-10 md:py-6 text-xs md:text-sm'>
-      <div className='max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6'>
-        
-        <div>
-          <p>© 2025 animeforfree. All rights reserved.</p>
+    <footer className='w-full flex-col bg-gray-900 md:flex-row gap-5 text-white rounded-t-2xl mt-0 p-6 md:px-10 md:py-6 text-xs md:text-sm flex justify-between'>
+      <div className='flex flex-col gap-2'>
+          <p className='hover:bg-blue-600 rounded-2xl border p-2 w-max'>© 2025 animeforfree. All rights reserved.</p>
+          <a href="/dmca" className="hover:text-blue-500 rounded-2xl hover:underline border p-2 w-max">DMCA</a>
         </div>
-
-        <div className='flex flex-col gap-4 items-center md:items-start'>
-
-          <div className='flex flex-col w-full items-center md:items-end gap-5'>
-            <a href="/dmca" className='flex items-center gap-1 hover:text-blue-400'>
-              <Info size={16} /> <p>DMCA</p>
-            </a>
-            <Sociallinks />
-          </div>
-
-          {/* <div className='flex items-center gap-2'>
-            <div className='rounded-full border p-1'>
-              <User size={16} />
-            </div>
-            <p>
-              Contact: <a href="mailto:${deepakyadav4014@gmail.com}" className='text-blue-400 hover:underline'>{Mail}</a>
-            </p>
-          </div> */}
+        <div className='border p-3 hover:bg-black rounded-2xl w-max'>
+          <Sociallinks/>
         </div>
-      </div>
     </footer>
   );
 }

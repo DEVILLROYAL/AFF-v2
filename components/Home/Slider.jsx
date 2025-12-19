@@ -5,6 +5,7 @@ export default async function Slider() {
   const data = await fetch(url);
   let res = await data.json();
   const slider = await res.data.spotlightAnimes;
+  console.log(slider);
 
   return (
     <>
@@ -25,13 +26,13 @@ export default async function Slider() {
               <div className="flex justify-center opacity-50 items-center flex-row-reverse  text-white p-1 md:p-2 md:gap-3 xl:gap-5 xl:p-5 gap-2 text-xs xl:text-sm absolute top-0 right-0">
               <div className="flex justify-center p-1 items-center font-extralight" >
                 <p>
-                   {item.quality}
+                   4K
                 </p>
               </div>
               |
               <div className="font-extralight p-1 flex justify-center items-center" >
                 <p>
-                   {item.category}
+                   {item.type}
                 </p>
               </div>
               </div>
