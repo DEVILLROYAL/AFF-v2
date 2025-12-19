@@ -30,13 +30,17 @@ export default function SearchComponent(props) {
                                       <div className="w-full absolute bottom-0 p-2 xl:p-3">
                                         <p className="text-wrap text-shadow-black text-shadow-lg">{item.name}</p>
                                       </div>
-                                      {item.rating && (<p className="w-max">{item.rating}</p>)}
-                                      {item.episodes.dub && <div popoverTarget="deb-hover" className="p-2 opacity-25 absolute right-0">
+                                        <div>
+                                          {item.episodes.dub && <div popoverTarget="deb-hover" className="p-2 opacity-25">
                                         <Mic size={16} />
                                         </div>}
-                                      {item.episodes.sub && <div className="p-2 absolute opacity-25 left-0">
+                                      {item.episodes.sub && <div className="p-2 opacity-25">
                                         <Subtitles size={16}/>
                                         </div>}
+                                        </div>
+                                        <div className="text-white p-2 absolute opacity-25 top-0 right-0 w-max">
+                                          {item.rating && (<p className="w-max">{item.rating}</p>)}
+                                        </div>
                                     </div>
                                   </div>
                                 </div>

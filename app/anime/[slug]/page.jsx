@@ -7,7 +7,7 @@ import Showcase from '@/components/Cards/Showcase';
    🟢 Dynamic SEO Metadata (Anime Info Page)
 ------------------------------------------------------- */
 export async function generateMetadata({ params }) {
-  const slug = params.slug;
+  const {slug} = await params;
 
   const api = `https://api.jikan.moe/v4/anime?q=${slug}&limit=1`;
   const res = await fetch(api);
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }) {
    🟢 Anime Page Component
 ------------------------------------------------------- */
 export default async function AnimePage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   // Get anime info
   const lnk = `https://api.jikan.moe/v4/anime?q=${slug}&limit=1`;

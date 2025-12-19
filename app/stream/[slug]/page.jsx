@@ -5,7 +5,7 @@ import React from 'react';
    SEO: generateMetadata() (JavaScript Only)
 -------------------------------------------- */
 export async function generateMetadata({ params }) {
-  const slug = params.slug;
+  const {slug} = await params;
 
   // Fetch episode info
   const watchUrl = `https://yuma-anime-api-one.vercel.app/watch?episodeId=${decodeURIComponent(slug)}`;
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }) {
    PAGE COMPONENT
 -------------------------------------------- */
 export default async function StreamPage({ params }) {
-  const slug = params.slug;
+  const {slug} = await params;
 
   const api = `https://yuma-anime-api-one.vercel.app/watch?episodeId=${decodeURIComponent(slug)}`;
   const resData = await fetch(api);

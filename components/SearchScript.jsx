@@ -10,7 +10,7 @@ export default function SearchScript() {
 
 
   const handleSearchClick = async (slug) => {
-    router.push(`/search/${slug}`);
+    router.push(`/search/${slug}?page=${1}`);
   }; 
 
   return (
